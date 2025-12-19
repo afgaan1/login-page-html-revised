@@ -1,0 +1,289 @@
+/* Import premium font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* 1. RESET & BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Deep Blue and Purple Gradient Combo */
+    background: linear-gradient(45deg, #120458, #3c1053, #000428);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: white;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 2. THE GLASS CARD */
+.login-card {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px; /* Optimized padding to fit both Login and Register forms */
+    
+    /* Glassmorphism Styles */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px) saturate(120%);
+    -webkit-backdrop-filter: blur(15px) saturate(120%);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    
+    text-align: center;
+    overflow: hidden;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-card h1 {
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    font-size: 26px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #ffffff, #b967ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 3. FORM INPUTS */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+    transition: 0.3s ease all;
+    font-size: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.07);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+/* Remove spinners from Phone Number input */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/* Fix Date Input Icon Color */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* Floating Label Logic (Covers Text, Number, and Date inputs) */
+.input-group input:focus ~ label,
+.input-group input:valid ~ label,
+.input-group input[type="date"] ~ label {
+    top: -10px;
+    left: 10px;
+    font-size: 13px;
+    color: #b967ff; 
+    background: rgba(28, 0, 54, 0.8); 
+    padding: 0 5px;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.input-group input:focus {
+    border-color: #b967ff;
+    box-shadow: 0 0 15px rgba(185, 103, 255, 0.3);
+}
+
+/* 4. BUTTONS */
+button.btn-primary {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to right, #4a00e0, #8e2de2);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 5px;
+}
+
+button.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -10px rgba(142, 45, 226, 0.5);
+}
+
+/* 5. LINKS (Forgot Password / Register) */
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.links a, .switch-page a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.2s;
+}
+
+.links a:hover, .switch-page a:hover {
+    color: #b967ff;
+}
+
+/* Bottom Switch Page Link (used in Register/Forgot pages) */
+.switch-page {
+    margin-top: 25px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.switch-page a {
+    font-weight: bold;
+    color: #b967ff;
+    margin-left: 5px;
+}
+
+.switch-page a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* 6. SOCIAL LOGIN SECTION (Used in Login Page) */
+.divider {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.divider span {
+    padding: 0 15px;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.social-btn img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+/* Container for the "Or continue with" text */
+.social-login {
+  margin-top: 25px;
+  text-align: center;
+  border-top: 1px solid #eee; /* Light divider line */
+  padding-top: 20px;
+}
+
+.social-login p {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+/* The Container for the buttons (Puts them side-by-side) */
+.social-icons {
+  display: flex;
+  justify-content: center; /* Centers them horizontally */
+  gap: 20px;               /* Space between the circles */
+}
+
+/* The Circular Button */
+.social-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;             /* Fixed width */
+  height: 50px;            /* Fixed height (must match width) */
+  border-radius: 50%;      /* Makes it a perfect circle */
+  border: 1px solid #e1e1e1;
+  background-color: white;
+  transition: all 0.3s ease; /* Smooth hover animation */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Hover Effects */
+.social-circle:hover {
+  transform: translateY(-3px); /* Moves up slightly */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Shadow grows */
+  border-color: #ccc;
+}
+
+/* Specific Brand Colors (Optional borders) */
+.social-circle.google:hover { border-color: #4285F4; background-color: #fff; }
+.social-circle.facebook:hover { border-color: #1877F2; background-color: #f0f6ff; }
+
+/* Icon sizing */
+.social-circle img {
+  width: 24px;
+  height: 24px;
+}

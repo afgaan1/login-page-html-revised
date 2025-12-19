@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Account</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="login-card">
+        <h1>Create Account</h1>
+        
+        <form action="backend.php" method="post">
+            
+            <div class="input-group">
+                <input type="text" id="flname" name="flname" required>
+                <label for="flname">Full Name</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" name="email" required>
+                <label for="email">Email Address</label>
+            </div>
+
+            <div class="input-group">
+                <input type="number" id="pno" name="pno" required>
+                <label for="pno">Phone Number</label>
+            </div>
+
+            <div class="input-group">
+                <input type="date" id="date" name="date" required>
+                <label for="date">Date of Birth</label>
+            </div>
+
+            <button type="submit" class="btn-primary">REGISTER</button>
+        </form>
+
+        <div class="switch-page">
+            Already have an account? 
+            <a href="index.html">Login here</a>
+        </div>
+    </div>
+
+</body>
+</html>

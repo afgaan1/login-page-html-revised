@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaanzy Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="fav.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="login-card">
+        <h1>Code With Ganzy</h1>
+        
+        <form action="backend.php" method="post" target="backend_pop.php">
+            
+            <div class="input-group">
+                <input type="text" id="uname" name="uname" required>
+                <label for="uname">Username</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="pass" name="pass" required>
+                <label for="pass">Password</label>
+            </div>
+
+            <button type="submit" class="btn-primary">SIGN IN</button>
+        </form>
+
+        <div class="links">
+            <a href="fpass.html">Forgot Password?</a>
+            <a href="register.html">Create Account</a>
+        </div>
+
+        <div class="social-login">
+    <p>Or continue with</p>
+    
+    <div class="social-icons">
+        <a href="https://google.com" class="social-circle google" title="Sign in with Google">
+            <img src="google.svg" alt="Google">
+        </a>
+
+        <a href="https://facebook.com" class="social-circle facebook" title="Sign in with Facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
